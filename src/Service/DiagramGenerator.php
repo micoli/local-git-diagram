@@ -76,8 +76,8 @@ class DiagramGenerator
             $chat,
             $model,
             implode("\n", [
-                file_get_contents(__DIR__ . '/prompts/explanationInstructions.txt'),
                 file_get_contents(__DIR__ . '/prompts/additionalSystemInstructions.txt'),
+                file_get_contents(__DIR__ . '/prompts/explanationInstructions.txt'),
                 sprintf("<file_tree>%s</file_tree>", implode("\n", $fileList)),
                 sprintf("<readme>%s</readme>", $readme),
             ])
@@ -88,8 +88,8 @@ class DiagramGenerator
             $chat,
             $model,
             implode("\n", [
-                file_get_contents(__DIR__ . '/prompts/mapInstructions.txt'),
                 file_get_contents(__DIR__ . '/prompts/additionalSystemInstructions.txt'),
+                file_get_contents(__DIR__ . '/prompts/mapInstructions.txt'),
                 sprintf("<explanation>%s</explanation>", $explanation),
                 sprintf("<file_tree>%s</file_tree>", implode("\n", $fileList)),
             ])
@@ -100,6 +100,7 @@ class DiagramGenerator
             $chat,
             $model,
             implode("\n", [
+                file_get_contents(__DIR__ . '/prompts/additionalSystemInstructions.txt'),
                 file_get_contents(__DIR__ . '/prompts/mermaidInstructions.txt'),
                 sprintf("<explanation>%s</explanation>", $explanation),
                 sprintf("<map>%s</map>", $map),
